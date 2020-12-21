@@ -7,13 +7,13 @@ public class MyStream {
         //#1: create object
         //High Level (HL) Stream from Low Level Stream (LL)
         try (var br = new BufferedReader(//HL
-                new FileReader("zoo-data.txt"))) {//LL
+                new FileReader("src/filesAndDirectories/zoo.txt"))) {//LL
             System.out.println(br.readLine());
         }
 
         //High Level Stream from High Level Stream
         try (var ois = new ObjectInputStream(new BufferedInputStream(//Both streams are HL
-                new FileInputStream("zoo-data.txt")))) {//LL
+                new FileInputStream("src/filesAndDirectories/zoo.txt")))) {//LL
             System.out.print(ois.readObject());
         }
        /* try {

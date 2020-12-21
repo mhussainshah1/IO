@@ -10,7 +10,7 @@ public class MyGorilla {
         var gorillas = new ArrayList<Gorilla>();
         gorillas.add(new Gorilla("Grodd", 5, false));
         gorillas.add(new Gorilla("Ishmael", 8, true));
-        File dataFile = new File("gorilla.data");
+        File dataFile = new File("src\\serialization\\gorilla.data");
 
         saveToFile(gorillas, dataFile);
         var gorillasFromDisk = readFromFile(dataFile);

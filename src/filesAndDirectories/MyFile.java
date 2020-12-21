@@ -5,7 +5,7 @@ import java.io.File;
 public class MyFile {
 
     public static void main(String[] args) {
-        var file = new File("C:\\Users\\m_hus\\IdeaProjects\\IO\\zoo.txt");
+        var file = new File("src/filesAndDirectories/zoo.txt");// or new File(src\\filesAndDirectories\\zoo.txt);
         System.out.println("File Exists: " + file.exists());
         if (file.exists()) {
             System.out.println("Absolute Path: " + file.getAbsolutePath());

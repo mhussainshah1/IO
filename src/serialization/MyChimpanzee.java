@@ -10,7 +10,7 @@ public class MyChimpanzee {
         var chimpanzees = new ArrayList<Chimpanzee>();
         chimpanzees.add(new Chimpanzee("Ham", 2, 'A'));
         chimpanzees.add(new Chimpanzee("Enos", 4, 'B'));
-        File dataFile = new File("chimpanzee.data");
+        File dataFile = new File("src/serialization/chimpanzee.data");
 
         saveToFile(chimpanzees, dataFile);
         var chimpanzeesFromDisk = readFromFile(dataFile);
