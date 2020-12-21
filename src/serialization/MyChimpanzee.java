@@ -18,7 +18,9 @@ public class MyChimpanzee {
     }
 
     private static void saveToFile(List<Chimpanzee> chimpanzees, File dataFile) throws IOException {
-        try (var out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(dataFile)))) {
+        try (var out = new ObjectOutputStream(
+                new BufferedOutputStream(
+                        new FileOutputStream(dataFile)))) {
             for (Chimpanzee chimpanzee : chimpanzees)
                 out.writeObject(chimpanzee);
         }
@@ -26,9 +28,10 @@ public class MyChimpanzee {
 
     private static List<Chimpanzee> readFromFile(File dataFile) throws IOException, ClassNotFoundException {
         var gorillas = new ArrayList<Chimpanzee>();
-        try (var in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(dataFile)))) {
+        try (var in = new ObjectInputStream(
+                new BufferedInputStream(
+                        new FileInputStream(dataFile)))) {
             while (true) {
-                System.out.println(in.available());
                 var object = in.readObject();
                 if (object instanceof Chimpanzee)
                     gorillas.add((Chimpanzee) object);

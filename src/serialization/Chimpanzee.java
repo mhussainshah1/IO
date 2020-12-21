@@ -23,6 +23,7 @@ public class Chimpanzee implements Serializable {
     }
 
     public Chimpanzee(String name, int age, char type) {
+        this();
         this.name = name;
         this.age = age;
         this.type = type;
