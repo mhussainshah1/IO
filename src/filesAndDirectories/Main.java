@@ -1,4 +1,4 @@
-package com.company;
+package filesAndDirectories;
 
 import java.io.File;
 

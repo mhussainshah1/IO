@@ -1,3 +1,5 @@
+package filesAndDirectories;
+
 import java.nio.charset.Charset;
 
 public class CharacterEncoding {

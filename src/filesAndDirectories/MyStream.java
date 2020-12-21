@@ -1,3 +1,5 @@
+package filesAndDirectories;
+
 import java.io.*;
 
 public class MyStream {
