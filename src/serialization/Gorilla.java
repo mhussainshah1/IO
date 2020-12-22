@@ -4,7 +4,6 @@ import java.io.Serial;
 import java.io.Serializable;
 
 public class Gorilla implements Serializable {
-    @Serial
     private static final long serialVersionUID = 1L;
     private String name;
     private int age;
@@ -19,10 +18,6 @@ public class Gorilla implements Serializable {
         this.name = name;
         this.age = age;
         this.friendly = friendly;
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
     }
 
     public String getName() {

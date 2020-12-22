@@ -14,6 +14,7 @@ public class Login {
             console.writer().println();
 
             console.format("What is your address? ");
+            console.readLine("");
             String address = console.readLine();
 
             char[] password =

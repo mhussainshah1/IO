@@ -5,7 +5,10 @@ import java.io.*;
 public class CommonOperation {
 
     public static void main(String[] args) throws IOException {
+
         var ops = new CommonOperation();
+        ops.readData(new BufferedInputStream(new FileInputStream("src/filesAndDirectories/Lion.txt")));
+        ops.skipData(new BufferedInputStream(new FileInputStream("src/filesAndDirectories/Tiger.txt")));
         ops.closeStream();
     }
 
@@ -29,12 +32,12 @@ public class CommonOperation {
     //closing stream
     public void closeStream() throws IOException {
         //close with try-with-resource
-        try (var fis = new FileInputStream("zoo.txt")) {
+        try (var fis = new FileInputStream("src\\filesAndDirectories\\zoo.txt")) {
             System.out.print(fis.read());
         }
 
         //call three close methods
-        try (var fis = new FileOutputStream("zoo.txt"); // Unnecessary
+        try (var fis = new FileOutputStream("src\\filesAndDirectories\\zoo.txt"); // Unnecessary
              var bis = new BufferedOutputStream(fis);
              var ois = new ObjectOutputStream(bis)) {
             ois.writeObject("Hello");
@@ -43,7 +46,7 @@ public class CommonOperation {
         //call one close method
         try (var ois = new ObjectOutputStream(
                 new BufferedOutputStream(
-                        new FileOutputStream("zoo.txt")))) {
+                        new FileOutputStream("src\\filesAndDirectories\\zoo.txt")))) {
             ois.writeObject("Hello");
         }
     }
@@ -59,7 +62,7 @@ public class CommonOperation {
         }
         System.out.print((char) is.read()); // I
         System.out.print((char) is.read()); // O
-        System.out.print((char) is.read()); // N
+        System.out.println((char) is.read()); // N
     }
 
     //skip()
@@ -68,7 +71,7 @@ public class CommonOperation {
         is.skip(2); // Skips I and G
         is.read(); // Reads E but doesn't output it
         System.out.print((char) is.read()); // R
-        System.out.print((char) is.read()); // S
+        System.out.println((char) is.read()); // S
     }
 
     //flush()

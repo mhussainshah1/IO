@@ -27,19 +27,19 @@ public class MyChimpanzee {
     }
 
     private static List<Chimpanzee> readFromFile(File dataFile) throws IOException, ClassNotFoundException {
-        var gorillas = new ArrayList<Chimpanzee>();
+        var chimpanzees = new ArrayList<Chimpanzee>();
         try (var in = new ObjectInputStream(
                 new BufferedInputStream(
                         new FileInputStream(dataFile)))) {
             while (true) {
                 var object = in.readObject();
                 if (object instanceof Chimpanzee)
-                    gorillas.add((Chimpanzee) object);
+                    chimpanzees.add((Chimpanzee) object);
             }
         } catch (EOFException e) {
             // File end reached
 //            e.printStackTrace();
         }
-        return gorillas;
+        return chimpanzees;
     }
 }
